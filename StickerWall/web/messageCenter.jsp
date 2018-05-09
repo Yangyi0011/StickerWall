@@ -1,0 +1,21 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: YangYi
+  Date: 2017/11/24
+  Time: 10:12
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
+<%@ include file="WEB-INF/taglib.jsp"%>
+<html>
+<head>
+    <title>消息中心页面</title>
+    <script type="text/javascript" src="layer/layer.js"></script>
+
+</head>
+<body>
+<h1 class="text-center" style="color: #66ccff">消息中心页面:抱歉，此功能尚未实现~</h1>
+</body>
+</html>

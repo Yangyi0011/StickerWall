@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!--编码过滤器-->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.stickerwall.filter.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--权限过滤器-->
+    <filter>
+        <filter-name>PermissionFilter</filter-name>
+        <filter-class>com.stickerwall.filter.PermissionFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>PermissionFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--验证用户名-->
+    <servlet>
+        <servlet-name>CheckUserNameServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.CheckUserNameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckUserNameServlet</servlet-name>
+        <url-pattern>/checkUserNameServlet</url-pattern>
+    </servlet-mapping>
+    <!--用户登录-->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
+<!--注册-->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/registerServlet</url-pattern>
+    </servlet-mapping>
+
+<!--退出-->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logoutServlet</url-pattern>
+    </servlet-mapping>
+
+<!--发布贴纸-->
+    <servlet>
+        <servlet-name>ReleaseStickerServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.ReleaseStickerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReleaseStickerServlet</servlet-name>
+        <url-pattern>/releaseSticker</url-pattern>
+    </servlet-mapping>
+
+    <!--分页获取首页数据-->
+    <servlet>
+        <servlet-name>GetIndexDataServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.GetIndexDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetIndexDataServlet</servlet-name>
+        <url-pattern>/getIndexDataServlet</url-pattern>
+    </servlet-mapping>
+
+<!--点赞-->
+    <servlet>
+        <servlet-name>PraiseServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.PraiseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PraiseServlet</servlet-name>
+        <url-pattern>/praiseServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--查看贴纸详情-->
+    <servlet>
+        <servlet-name>StickerDetailsServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.StickerDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StickerDetailsServlet</servlet-name>
+        <url-pattern>/stickerDetailsServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--分页获取主贴的所有回帖信息-->
+    <servlet>
+        <servlet-name>GetRepliesByStickerServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.GetRepliesByStickerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetRepliesByStickerServlet</servlet-name>
+        <url-pattern>/getRepliesBySticker</url-pattern>
+    </servlet-mapping>
+
+    <!--回帖-->
+    <servlet>
+        <servlet-name>ReplyServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.ReplyServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReplyServlet</servlet-name>
+        <url-pattern>/replyServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--获取用户昵称-->
+    <servlet>
+        <servlet-name>GetNicknameServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.GetNicknameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetNicknameServlet</servlet-name>
+        <url-pattern>/getNicknameServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--获取用户等级-->
+    <servlet>
+        <servlet-name>GetGradeServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.GetGradeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetGradeServlet</servlet-name>
+        <url-pattern>/getGradeServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--获取用户经验-->
+    <servlet>
+        <servlet-name>GetEXPServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.GetEXPServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetEXPServlet</servlet-name>
+        <url-pattern>/getEXPServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--更新用户信息-->
+    <servlet>
+        <servlet-name>UserInfoUpdateServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.UserInfoUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserInfoUpdateServlet</servlet-name>
+        <url-pattern>/userInfoUpdate</url-pattern>
+    </servlet-mapping>
+
+    <!--管理员登录-->
+    <servlet>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.AdminLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLoginServlet</servlet-name>
+        <url-pattern>/adminLogin</url-pattern>
+    </servlet-mapping>
+
+    <!--获取所有用户-->
+    <servlet>
+        <servlet-name>GetUsersServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.GetUsersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetUsersServlet</servlet-name>
+        <url-pattern>/getUsers</url-pattern>
+    </servlet-mapping>
+
+    <!--查看用户信息-->
+    <servlet>
+        <servlet-name>LookUserInfoServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.LookUserInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LookUserInfoServlet</servlet-name>
+        <url-pattern>/lookUserInfo</url-pattern>
+    </servlet-mapping>
+
+    <!--查看贴纸信息-->
+    <servlet>
+        <servlet-name>LookStickerInfoServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.LookStickerInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LookStickerInfoServlet</servlet-name>
+        <url-pattern>/lookStickerInfo</url-pattern>
+    </servlet-mapping>
+
+    <!--操作用户-->
+    <servlet>
+        <servlet-name>OperationUserServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.OperationUserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OperationUserServlet</servlet-name>
+        <url-pattern>/operationUser</url-pattern>
+    </servlet-mapping>
+
+    <!--操作贴纸-->
+    <servlet>
+        <servlet-name>OperationStickerServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.OperationStickerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OperationStickerServlet</servlet-name>
+        <url-pattern>/operationSticker</url-pattern>
+    </servlet-mapping>
+
+    <!--获取贴纸，用于管理-->
+    <servlet>
+        <servlet-name>GetStickersServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.GetStickersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetStickersServlet</servlet-name>
+        <url-pattern>/getStickers</url-pattern>
+    </servlet-mapping>
+
+    <!--获取管理员，用于管理-->
+    <servlet>
+        <servlet-name>GetAdminsServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.GetAdminsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAdminsServlet</servlet-name>
+        <url-pattern>/getAdmins</url-pattern>
+    </servlet-mapping>
+
+    <!--查看管理员信息-->
+    <servlet>
+        <servlet-name>LookAdminServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.LookAdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LookAdminServlet</servlet-name>
+        <url-pattern>/lookAdmin</url-pattern>
+    </servlet-mapping>
+
+    <!--操作管理员-->
+    <servlet>
+        <servlet-name>OperationAdminServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.OperationAdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OperationAdminServlet</servlet-name>
+        <url-pattern>/operationAdmin</url-pattern>
+    </servlet-mapping>
+
+    <!--添加管理员-->
+    <servlet>
+        <servlet-name>AdminAddServlet</servlet-name>
+        <servlet-class>com.stickerwall.servlet.AdminAddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminAddServlet</servlet-name>
+        <url-pattern>/adminAdd</url-pattern>
+    </servlet-mapping>
+
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://java.sun.com/jstl/core</taglib-uri>
+            <taglib-location>/WEB-INF/c.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+</web-app>
